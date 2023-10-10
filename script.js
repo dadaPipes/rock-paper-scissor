@@ -93,4 +93,5 @@ function appendParagraph(text) {
     const paragraph       = document.createElement("p");
     paragraph.textContent = text;
     div.appendChild(paragraph);
+    
 }

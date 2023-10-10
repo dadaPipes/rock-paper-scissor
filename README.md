@@ -1,2 +1,2 @@
 # rock-paper-scissor
-small web game in Javascript
+small web game in Javascript.
