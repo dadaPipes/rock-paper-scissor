@@ -1,11 +1,11 @@
-const buttons = document.querySelectorAll("button")
-const div = document.querySelector("div");
-let playerScore = 0;
-let computerScore = 0;
+const buttons       = document.querySelectorAll("button")
+const div           = document.querySelector("div");
+let playerScore     = 0;
+let computerScore   = 0;
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        if(playerScore === 5 || computerScore === 5) {
+        if(playerScore  === 5 || computerScore === 5) {
             playerScore   = 0;
             computerScore = 0; 
         }
@@ -60,9 +60,9 @@ function playRound(playerSelection, computerSelection) {
         }
     };
 
-    const outcome = outcomes[playerSelection][computerSelection];
-    playerScore += outcome.playerScore;
-    computerScore += outcome.computerScore;
+    const outcome    = outcomes[playerSelection][computerSelection];
+    playerScore     += outcome.playerScore;
+    computerScore   += outcome.computerScore;
 
     return outcome.message;
 }
@@ -71,25 +71,25 @@ function updateUI(playerChoise, computerChoise, roundOutcome) {
     div.innerHTML = "";
 
     if(playerScore === 5) {
-        appendParagraph("Player wins");
-        appendParagraph("player score: "   + playerScore);
-        appendParagraph("Computer Score: " + computerScore);
+        createAndAppendParagraph("Player wins");
+        createAndAppendParagraph("player score: "   + playerScore);
+        createAndAppendParagraph("Computer Score: " + computerScore);
     }
     else if(computerScore === 5) {
-        appendParagraph("Computer wins");
-        appendParagraph("player score: "   + playerScore);
-        appendParagraph("Computer Score: " + computerScore);
+        createAndAppendParagraph("Computer wins");
+        createAndAppendParagraph("player score: "   + playerScore);
+        createAndAppendParagraph("Computer Score: " + computerScore);
     }
     else {
-        appendParagraph("Player: "         + playerChoise);
-        appendParagraph("Computer: "       + computerChoise);
-        appendParagraph(roundOutcome);
-        appendParagraph("player score: "   + playerScore);
-        appendParagraph("Computer Score: " + computerScore);
+        createAndAppendParagraph("Player: "         + playerChoise);
+        createAndAppendParagraph("Computer: "       + computerChoise);
+        createAndAppendParagraph(roundOutcome);
+        createAndAppendParagraph("player score: "   + playerScore);
+        createAndAppendParagraph("Computer Score: " + computerScore);
     }
 }
 
-function appendParagraph(text) {
+function createAndAppendParagraph(text) {
     const paragraph       = document.createElement("p");
     paragraph.textContent = text;
     div.appendChild(paragraph);
